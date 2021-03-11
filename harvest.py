@@ -90,7 +90,15 @@ def print_pairing_info(melon_types):
     return None
 
 def make_melon_type_lookup(melon_types):
-    """Takes a list of MelonTypes and returns a dictionary of melon type by code."""
+    """Takes a list of MelonTmypes and returns a dictionary of melon type by code."""
+    
+    melon_lookup = {}
+    for melon_type in melon_types:
+        if melon_type.code not in melon_lookup:
+            melon_lookup[melon_type.code] = melon_type
+
+    return melon_lookup
+
 
     # Fill in the rest
 
@@ -100,6 +108,18 @@ def make_melon_type_lookup(melon_types):
 
 class Melon(object):
     """A melon in a melon harvest."""
+
+    def __init__(self, number, melon_type, shape_rating, color_rating, field_no, worker):
+        self.number = number
+        self.melon_type = melon_type 
+        self.shape_rating = shape_rating
+        self.color_rating = color_rating
+        self.field_no = field_no
+        self.worker = worker
+
+    def is_sellable(self, melon_number)
+        
+
 
     # Fill in the rest
     # Needs __init__ and is_sellable methods
