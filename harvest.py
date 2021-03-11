@@ -100,8 +100,6 @@ def make_melon_type_lookup(melon_types):
     return melon_lookup
 
 
-    # Fill in the rest
-
 ############
 # Part 2   #
 ############
@@ -118,11 +116,11 @@ class Melon(object):
         self.worker = worker
 
     def is_sellable(self, melon_number)
-        
+        if self.shape_rating > 5 & self.color_rating > 5 & self.field_no != 3:
+            return True
+        else:
+            return False
 
-
-    # Fill in the rest
-    # Needs __init__ and is_sellable methods
 
 def make_melons(melon_types):
     """Returns a list of Melon objects."""
